@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_rule"
+        android:icon="@drawable/icon_question_mark"
+        android:title="@string/user_coin_menu_rule"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item_history"
+        android:icon="@drawable/icon_clock"
+        android:title="@string/user_coin_menu_history"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,42 @@
+<html>
+<body>
+<h1>开源组件</h1>
+<ul id="ul">
+
+</ul>
+</body>
+<script type="text/javascript">
+	var items=[
+	{title:"material-components-android",desc:"Modular and customizable Material Design UI components for Android",url:"https://github.com/material-components/material-components-android"},
+	{title:"UnPeek-LiveData",desc:"LiveData防数据倒灌",url:"https://github.com/KunMinX/UnPeek-LiveData"},
+	{title:"retrofit",desc:"A type-safe HTTP client for Android and the JVM",url:"https://github.com/square/retrofit"},
+	{title:"PersistentCookieJar",desc:"A persistent CookieJar implementation for OkHttp 3 based on SharedPreferences.",url:"https://github.com/franmontiel/PersistentCookieJar"},
+	{title:"AndroidAutoSize",desc:"A low-cost Android screen adaptation solution (今日头条屏幕适配方案终极版，一个极低成本的 Android 屏幕适配方案). ",url:"https://github.com/JessYanCoding/AndroidAutoSize"},
+	{title:"SmartRefreshLayout",desc:"下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer。",url:"https://github.com/scwang90/SmartRefreshLayout"},
+	{title:"Banner",desc:"Banner 2.0 来了！Android广告图片轮播控件，内部基于ViewPager2实现，Indicator和UI都可以自定义。 ",url:"https://github.com/youth5201314/banner"},
+	{title:"BaseRecyclerViewAdapterHelper",desc:"一个强大并且灵活的RecyclerViewAdapter",url:"https://github.com/CymChad/BaseRecyclerViewAdapterHelper"},
+	{title:"LoadSir",desc:"优雅地处理加载中，重试，无数据等",url:"https://github.com/KingJA/LoadSir"},
+	{title:"MagicIndicator",desc:"强大、可定制、易扩展的 ViewPager 指示器框架",url:"https://github.com/hackware1993/MagicIndicator"},
+	{title:"AgentWeb",desc:"AgentWeb 是一个基于的 Android WebView ，极度容易使用以及功能强大的库，提供了 Android WebView 一系列的问题解决方案 ，并且轻量和极度灵活",url:"https://github.com/Justson/AgentWeb"},
+	{title:"CustomActivityOnCrash",desc:"Android library that allows launching a custom activity when your app crashes, instead of showing the hated 'Unfortunately, X has stopped' dialog. ",url:"https://github.com/Ereza/CustomActivityOnCrash"},
+	{title:"Coil",desc:"Coil 是一个 Android 图片加载库，通过 Kotlin 协程的方式加载图片",url:"https://github.com/coil-kt/coil"},
+	{title:"Material Dialogs",desc:"A beautiful, fluid, and extensible dialogs API for Kotlin & Android.",url:"https://github.com/afollestad/material-dialogs"},
+	{title:"Splitties",desc:"A collection of hand-crafted extensions for your Kotlin projects. ",url:"https://github.com/LouisCAD/Splitties"},
+	{title:"Timber",desc:"A logger with a small, extensible API which provides utility on top of Android's normal Log class. ",url:"https://github.com/JakeWharton/timber"},
+	{title:"AndroidUtilCode",desc:"一个强大易用的安卓工具类库，它合理地封装了安卓开发中常用的函数",url:"https://github.com/Blankj/AndroidUtilCode"},
+	{title:"MMKV",desc:"MMKV 是基于 mmap 内存映射的 key-value 组件，底层序列化/反序列化使用 protobuf 实现，性能高，稳定性强。从 2015 年中至今在微信上使用，其性能和稳定性经过了时间的验证。",url:"https://github.com/Tencent/MMKV"},
+	{title:"Lottie",desc:"Render After Effects animations natively on Android and iOS, Web, and React Native ",url:"https://github.com/airbnb/lottie-android"}
+	]
+	var strs="";
+	for (var i = 0; i < items.length; i++) {
+		strs+="<li>";
+		strs+="<h2>"+items[i]["title"]+"</h2>";
+		strs+="<p>"+items[i]["desc"]+"</p>"
+		strs+='<p><a href="'+items[i]["url"]+'">'+items[i]["url"]+'</a></p>'
+		strs+="</li>"
+	}
+	document.getElementById("ul").innerHTML=strs;
+
+
+</script>
+</html>

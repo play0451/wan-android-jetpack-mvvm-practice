@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/settings_category_base">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="settings_key_home_top"
+            android:summary="@string/settings_summary_home_show_top"
+            android:title="@string/settings_title_home_show_top" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="settings_key_night_mode"
+            android:summary="@string/settings_summary_night_mode"
+            android:title="@string/settings_title_night_mode" />
+        <Preference
+            android:key="settings_key_clear_cache"
+            android:title="@string/settings_title_clear_cache" />
+        <Preference
+            android:key="settings_key_log_out"
+            android:summary="@string/settings_summary_log_out"
+            android:title="@string/settings_title_log_out" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_category_about">
+        <Preference
+            android:key="settings_key_open_source"
+            android:summary="@string/settings_summary_open_source"
+            android:title="@string/settings_title_open_source" />
+        <Preference
+            android:key="settings_key_version"
+            android:title="@string/settings_title_version" />
+        <Preference
+            android:key="settings_key_about"
+            android:summary="@string/settings_summary_about"
+            android:title="@string/settings_title_about" />
+    </PreferenceCategory>
+</PreferenceScreen>

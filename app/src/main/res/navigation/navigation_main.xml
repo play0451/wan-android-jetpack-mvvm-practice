@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.main.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_shareAriticleFragment"
+            app:destination="@id/shareAriticleFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_userCoinFragment"
+            app:destination="@id/userCoinFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_collectFragment"
+            app:destination="@id/collectFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_myShareAriticleFragment"
+            app:destination="@id/myShareAriticleFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_projectFragment"
+            app:destination="@id/projectFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_squareAriticleFragment"
+            app:destination="@id/squareAriticleFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_officialFragment"
+            app:destination="@id/officialFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_squareNavigationFragment"
+            app:destination="@id/squareNavigationFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_squareSystemFragment"
+            app:destination="@id/squareSystemFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/webviewFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.web.WebviewFragment"
+        android:label="WebviewFragment" />
+    <action
+        android:id="@+id/action_global_webviewFragment"
+        app:destination="@id/webviewFragment"
+        app:enterAnim="@anim/anim_slide_in_right"
+        app:exitAnim="@anim/anim_slide_out_left"
+        app:popEnterAnim="@anim/anim_slide_in_left"
+        app:popExitAnim="@anim/anim_slide_out_right" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.login.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/anim_slide_in_right"
+        app:exitAnim="@anim/anim_slide_out_left"
+        app:popEnterAnim="@anim/anim_slide_in_left"
+        app:popExitAnim="@anim/anim_slide_out_right" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.register.RegisterFragment"
+        android:label="RegisterFragment">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_mainFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.search.SearchFragment"
+        android:label="SearchFragment">
+        <action
+            android:id="@+id/action_searchFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.search.SearchResultFragment"
+        android:label="SearchResultFragment" />
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.user.UserDetailFragment"
+        android:label="UserDetailFragment" />
+    <action
+        android:id="@+id/action_global_userDetailFragment"
+        app:destination="@id/userDetailFragment"
+        app:enterAnim="@anim/anim_slide_in_right"
+        app:exitAnim="@anim/anim_slide_out_left"
+        app:popEnterAnim="@anim/anim_slide_in_left"
+        app:popExitAnim="@anim/anim_slide_out_right" />
+    <fragment
+        android:id="@+id/squareSystemSubFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.square.SquareSystemSubFragment"
+        android:label="SquareSystemSubFragment" />
+    <fragment
+        android:id="@+id/shareAriticleFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.share.ShareAriticleFragment"
+        android:label="ShareAriticleFragment" />
+    <fragment
+        android:id="@+id/userCoinFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.usercoin.UserCoinFragment"
+        android:label="UserCoinFragment">
+        <action
+            android:id="@+id/action_userCoinFragment_to_userCoinHistoryFragment"
+            app:destination="@id/userCoinHistoryFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/userCoinHistoryFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.usercoin.UserCoinHistoryFragment"
+        android:label="UserCoinHistoryFragment" />
+    <fragment
+        android:id="@+id/collectFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.collect.CollectFragment"
+        android:label="CollectFragment" />
+    <fragment
+        android:id="@+id/myShareAriticleFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.share.MyShareAriticleFragment"
+        android:label="MyShareAriticleFragment">
+        <action
+            android:id="@+id/action_myShareAriticleFragment_to_shareAriticleFragment"
+            app:destination="@id/shareAriticleFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.todo.TodoListFragment"
+        android:label="TodoListFragment">
+        <action
+            android:id="@+id/action_todoListFragment_to_todoEditFragment"
+            app:destination="@id/todoEditFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoEditFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.todo.TodoEditFragment"
+        android:label="TodoEditFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/projectFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.project.ProjectFragment"
+        android:label="ProjectFragment" />
+    <fragment
+        android:id="@+id/squareAriticleFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.square.SquareAriticleFragment"
+        android:label="SquareAriticleFragment">
+        <action
+            android:id="@+id/action_squareAriticleFragment_to_shareAriticleFragment"
+            app:destination="@id/shareAriticleFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/officialFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.official.OfficialFragment"
+        android:label="OfficialFragment" />
+    <fragment
+        android:id="@+id/squareSystemFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.square.SquareSystemFragment"
+        android:label="SquareSystemFragment">
+        <action
+            android:id="@+id/action_squareSystemFragment_to_squareSystemSubFragment"
+            app:destination="@id/squareSystemSubFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/squareNavigationFragment"
+        android:name="com.gw.mvvm.wan.ui.fragment.square.SquareNavigationFragment"
+        android:label="SquareNavigationFragment" />
+</navigation>

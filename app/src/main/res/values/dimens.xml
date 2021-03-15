@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_ariticle_card_conner_radius">2dp</dimen>
+    <dimen name="item_ariticle_card_elevation">2dp</dimen>
+
+    <dimen name="item_ariticle_card_margin_start_end">8dp</dimen>
+    <dimen name="item_ariticle_padding_start_end">8dp</dimen>
+    <dimen name="item_ariticle_padding_top_bottom">12dp</dimen>
+    <dimen name="item_ariticle_tag_padding_start_end">2dp</dimen>
+    <dimen name="item_ariticle_tag_padding_top_bottom">1dp</dimen>
+    <dimen name="item_ariticle_tag_margin_start">8dp</dimen>
+    <dimen name="item_ariticle_content_margintop">12dp</dimen>
+    <dimen name="item_project_content_margin_top">3dp</dimen>
+    <dimen name="item_project_content_margin_start">8dp</dimen>
+
+    <dimen name="item_ariticle_author_size">12sp</dimen>
+    <dimen name="item_ariticle_date_size">12sp</dimen>
+    <dimen name="item_ariticle_type_size">12sp</dimen>
+    <dimen name="item_ariticle_tag_size">10sp</dimen>
+    <dimen name="item_ariticle_content_size">14sp</dimen>
+    <dimen name="item_project_title_size">14sp</dimen>
+    <dimen name="item_project_content_size">12sp</dimen>
+    <dimen name="item_project_image_width">100dp</dimen>
+    <dimen name="item_ariticle_collect_width">18dp</dimen>
+
+    <dimen name="banner_height">150dp</dimen>
+    <dimen name="login_icon_size">120dp</dimen>
+    <dimen name="login_icon_margin_top_bottom">30dp</dimen>
+    <dimen name="login_text_input_margin_start_end">50dp</dimen>
+    <dimen name="login_button_margin_top">10dp</dimen>
+
+    <dimen name="loading_dialog_height">80dp</dimen>
+    <dimen name="loading_dialog_text_gap">20dp</dimen>
+
+    <dimen name="search_title_text_size">16sp</dimen>
+</resources>

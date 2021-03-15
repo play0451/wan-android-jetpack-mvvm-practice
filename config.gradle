@@ -1,0 +1,128 @@
+//引号得用双引号
+ext {
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.3",
+            minSdkVersion    : 24,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    version = [
+            "lifecycle"           : "2.2.0",
+            "retrofit"            : "2.9.0",
+            "navigation"          : "2.3.2",
+            "room"                : "2.2.6",
+            "smart_refresh_layout": "2.0.3",
+            "material_dialogs"    : "3.3.0",
+            "splitties"           : "3.0.0-beta01",
+    ]
+
+    dependencies = [
+            //核心
+            "core_ktx"                         : "androidx.core:core-ktx:1.3.2",
+            "appcompat"                        : "androidx.appcompat:appcompat:1.1.0",
+            "kotlinx_coroutines_android"       : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9",
+
+            "legacy_support_v4"                : "androidx.legacy:legacy-support-v4:1.0.0",
+            "multidex"                         : "com.android.support:multidex:1.0.3",
+
+            //官方UI组件
+            "material_components_android"      : "com.google.android.material:material:1.3.0-rc01",
+            "constraintlayout"                 : "androidx.constraintlayout:constraintlayout:2.0.4",
+            "preference_ktx"                   : "androidx.preference:preference-ktx:1.1.1",
+            "cardview"                         : "androidx.cardview:cardview:1.0.0",
+            "flexbox"                          : "com.google.android:flexbox:2.0.1",
+
+            //lifecycle
+            "lifecycle_runtime_ktx"            : "androidx.lifecycle:lifecycle-runtime-ktx:${version.lifecycle}",
+            "lifecycle_common_java8"           : "androidx.lifecycle:lifecycle-common-java8:${version.lifecycle}",
+            "lifecycle_extensions"             : "androidx.lifecycle:lifecycle-extensions:${version.lifecycle}",
+            "lifecycle_viewmodel_ktx"          : "androidx.lifecycle:lifecycle-viewmodel-ktx:${version.lifecycle}",
+            "lifecycle_livedata_ktx"           : "androidx.lifecycle:lifecycle-livedata-ktx:${version.lifecycle}",
+            "activity_ktx"                     : "androidx.activity:activity-ktx:1.1.0",
+            "fragment_ktx"                     : "androidx.fragment:fragment-ktx:1.2.5",
+            "unpeek_livedata"                  : "com.kunminx.archi:unpeek-livedata:4.4.1-beta1",
+
+            //retrofit
+            "retrofit"                         : "com.squareup.retrofit2:retrofit:${version.retrofit}",
+            "converter_gson"                   : "com.squareup.retrofit2:converter-gson:${version.retrofit}",
+            "PersistentCookieJar"              : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
+
+            //navigation
+            "navigation_fragment_ktx"          : "androidx.navigation:navigation-fragment-ktx:${version.navigation}",
+            "navigation_ui_ktx"                : "androidx.navigation:navigation-ui-ktx:${version.navigation}",
+
+            //room
+            "room_runtime"                     : "androidx.room:room-runtime:${version.room}",
+            "room_compiler"                    : "androidx.room:room-compiler:${version.room}",
+            "room_ktx"                         : "androidx.room:room-ktx:${version.room}",
+
+            //屏幕适配
+            "autosize"                         : "me.jessyan:autosize:1.2.1",
+
+            //SmartRefreshLayout
+            "smart_refresh_layout_kernel"      : "com.scwang.smart:refresh-layout-kernel:${version.smart_refresh_layout}",
+            "smart_refresh_header_classics"    : "com.scwang.smart:refresh-header-classics:${version.smart_refresh_layout}",
+            "smart_refresh_header_material"    : "com.scwang.smart:refresh-header-material:${version.smart_refresh_layout}",
+            "smart_refresh_footer_classics"    : "com.scwang.smart:refresh-footer-classics:${version.smart_refresh_layout}",
+
+            //banner
+            "banner"                           : "com.youth.banner:banner:2.1.0",
+
+            //BaseRecyclerViewAdapterHelper
+            "Base_recycler_view_adapter_helper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
+
+            //loadsir
+            "loadsir"                          : "com.kingja.loadsir:loadsir:1.3.8",
+
+            //MagicIndicator
+            "magic_indicator"                  : "com.github.hackware1993:MagicIndicator:1.7.0",
+
+            //agentweb-androidx
+            "agentweb_androidx"                : "com.just.agentweb:agentweb-androidx:4.1.4",
+
+            //CustomActivityOnCrash
+            "custom_activity_on_crash"         : "cat.ereza:customactivityoncrash:2.3.0",
+
+            //coil
+            "coil"                             : "io.coil-kt:coil:1.1.1",
+
+            //MaterialDialogs
+            "material_dialogs_core"            : "com.afollestad.material-dialogs:core:${version.material_dialogs}",
+            "material_dialogs_input"           : "com.afollestad.material-dialogs:input:${version.material_dialogs}",
+            "material_dialogs_files"           : "com.afollestad.material-dialogs:files:${version.material_dialogs}",
+            "material_dialogs_color"           : "com.afollestad.material-dialogs:color:${version.material_dialogs}",
+            "material_dialogs_datetime"        : "com.afollestad.material-dialogs:datetime:${version.material_dialogs}",
+            "material_dialogs_bottomsheets"    : "com.afollestad.material-dialogs:bottomsheets:${version.material_dialogs}",
+            "material_dialogs_lifecycle"       : "com.afollestad.material-dialogs:lifecycle:${version.material_dialogs}",
+
+            //Splitties
+            "splitties_toast"                  : "com.louiscad.splitties:splitties-toast:${version.splitties}",
+            "splitties_material_colors"        : "com.louiscad.splitties:splitties-material-colors:${version.splitties}",
+            "splitties_resources"              : "com.louiscad.splitties:splitties-resources:${version.splitties}",
+            "splitties_views_coroutines"       : "com.louiscad.splitties:splitties-views-coroutines:${version.splitties}",
+
+            //Timber
+            "timber"                           : "com.jakewharton.timber:timber:4.7.1",
+
+            //MMKV
+            "mmkv"                             : "com.tencent:mmkv-static:1.2.7",
+
+            //lottie
+            "lottie"                           : "com.airbnb.android:lottie:3.6.1",
+
+            //AndroidUtilCode
+            "utilcodex"                        : "com.blankj:utilcodex:1.30.5"
+    ]
+
+    test = [
+            "junit"             : "junit:junit:4.+",
+            "test_junit"        : "androidx.test.ext:junit:1.1.1",
+            "espresso_core"     : "androidx.test.espresso:espresso-core:3.2.0",
+            "leakcanary_android": "com.squareup.leakcanary:leakcanary-android:2.4",
+            "navigation_testing": "androidx.navigation:navigation-testing:${version.navigation}",
+            "room_testing"      : "androidx.room:room-testing:${version.room}"
+    ]
+}

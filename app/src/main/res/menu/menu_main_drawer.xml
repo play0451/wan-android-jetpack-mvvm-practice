@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="@string/menu_ariticle">
+        <menu>
+            <item
+                android:id="@+id/item_project"
+                android:icon="@drawable/icon_menu_project"
+                android:title="@string/menu_main_project" />
+            <item
+                android:id="@+id/item_square"
+                android:icon="@drawable/icon_menu_square"
+                android:title="@string/menu_main_square" />
+            <item
+                android:id="@+id/item_ask"
+                android:icon="@drawable/icon_menu_ask"
+                android:title="@string/square_ask_every_day" />
+            <item
+                android:id="@+id/item_system"
+                android:icon="@drawable/icon_menu_system"
+                android:title="@string/square_system" />
+            <item
+                android:id="@+id/item_navigation"
+                android:icon="@drawable/icon_menu_navigation"
+                android:title="@string/square_navigation" />
+            <item
+                android:id="@+id/item_official"
+                android:icon="@drawable/icon_menu_official"
+                android:title="@string/menu_main_official" />
+        </menu>
+    </item>
+    <item android:title="@string/menu_main_me">
+        <menu>
+            <item
+                android:id="@+id/item_me_coin"
+                android:icon="@drawable/icon_coin"
+                android:title="@string/me_menu_coin" />
+            <item
+                android:id="@+id/item_me_collection"
+                android:icon="@drawable/icon_collected"
+                android:title="@string/me_menu_collection" />
+            <item
+                android:id="@+id/item_me_ariticle"
+                android:icon="@drawable/icon_ariticle"
+                android:title="@string/me_menu_ariticle" />
+            <item
+                android:id="@+id/item_me_todo"
+                android:icon="@drawable/icon_todo"
+                android:title="@string/me_menu_todo" />
+        </menu>
+    </item>
+    <item android:title="@string/menu_others">
+        <menu>
+            <item
+                android:id="@+id/item_site"
+                android:icon="@drawable/icon_site"
+                android:title="@string/me_menu_site" />
+            <item
+                android:id="@+id/item_settings"
+                android:icon="@drawable/icon_settings"
+                android:title="@string/me_menu_settings" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ariticleData"
+            type="com.gw.mvvm.wan.data.ui.databinding.ItemAriticleBindingData" />
+    </data>
+
+    <!--<androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_ariticle_card_margin_start_end"
+        android:layout_marginEnd="@dimen/item_ariticle_card_margin_start_end"
+        app:cardCornerRadius="@dimen/item_ariticle_card_conner_radius"
+        app:cardElevation="@dimen/item_ariticle_card_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/item_ariticle_padding_start_end"
+            android:paddingTop="@dimen/item_ariticle_padding_top_bottom"
+            android:paddingEnd="@dimen/item_ariticle_padding_start_end"
+            android:paddingBottom="@dimen/item_ariticle_padding_top_bottom">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{ariticleData.author}"
+                        android:textSize="@dimen/item_ariticle_author_size"
+                        tools:text="作者是谁" />
+
+                    <TextView
+                        android:id="@+id/tv_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/item_ariticle_tag_margin_start"
+                        android:background="@drawable/shape_title_lable"
+                        android:paddingStart="@dimen/item_ariticle_tag_padding_start_end"
+                        android:paddingTop="@dimen/item_ariticle_tag_padding_top_bottom"
+                        android:paddingEnd="@dimen/item_ariticle_tag_padding_start_end"
+                        android:paddingBottom="@dimen/item_ariticle_tag_padding_top_bottom"
+                        android:text="@string/text_istop"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="@dimen/item_ariticle_tag_size"
+                        app:visibleOrGone="@{ariticleData.top}" />
+
+                    <TextView
+                        android:id="@+id/tv_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/item_ariticle_tag_margin_start"
+                        android:background="@drawable/shape_title_lable"
+                        android:paddingStart="@dimen/item_ariticle_tag_padding_start_end"
+                        android:paddingTop="@dimen/item_ariticle_tag_padding_top_bottom"
+                        android:paddingEnd="@dimen/item_ariticle_tag_padding_start_end"
+                        android:paddingBottom="@dimen/item_ariticle_tag_padding_top_bottom"
+                        android:text="@string/text_new"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="@dimen/item_ariticle_tag_size"
+                        app:visibleOrGone="@{ariticleData.fresh}" />
+
+                    <TextView
+                        android:id="@+id/tv_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/item_ariticle_tag_margin_start"
+                        android:background="@drawable/shape_title_lable"
+                        android:paddingStart="@dimen/item_ariticle_tag_padding_start_end"
+                        android:paddingTop="@dimen/item_ariticle_tag_padding_top_bottom"
+                        android:paddingEnd="@dimen/item_ariticle_tag_padding_start_end"
+                        android:paddingBottom="@dimen/item_ariticle_tag_padding_top_bottom"
+                        android:text="@{ariticleData.tag}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="@dimen/item_ariticle_tag_size"
+                        app:visibleOrGone="@{ariticleData.hasTag}"
+                        tools:text="问答" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{ariticleData.date}"
+                    android:textSize="@dimen/item_ariticle_date_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="2021-01-25" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_ariticle_content_margintop">
+
+                <ImageView
+                    android:id="@+id/iv_project"
+                    android:layout_width="@dimen/item_project_image_width"
+                    android:layout_height="@dimen/item_project_image_width"
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{ariticleData.imgUlr}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/item_project_content_margin_start"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_project"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="@{ariticleData.title}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/item_project_title_size"
+                        android:textStyle="bold"
+                        tools:text="这里是标题" />
+
+                    <TextView
+                        android:id="@+id/tv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_project_content_margin_top"
+                        android:ellipsize="end"
+                        android:lineSpacingMultiplier="1.3"
+                        android:maxLines="5"
+                        android:text="@{ariticleData.content}"
+                        android:textSize="@dimen/item_project_content_size"
+                        tools:text="这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_ariticle_content_margintop">
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{ariticleData.type}"
+                    android:textSize="@dimen/item_ariticle_type_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="分类·项目" />
+
+                <ImageButton
+                    android:id="@+id/btn_collect"
+                    android:layout_width="@dimen/item_ariticle_collect_width"
+                    android:layout_height="@dimen/item_ariticle_collect_width"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:scaleType="fitXY"
+                    android:src="@{ariticleData.collected ? @drawable/icon_collected : @drawable/icon_collect}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/icon_collected" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/item_ariticle_padding_start_end"
+        android:paddingTop="@dimen/item_ariticle_padding_top_bottom"
+        android:paddingEnd="@dimen/item_ariticle_padding_start_end"
+        android:paddingBottom="@dimen/item_ariticle_padding_top_bottom">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{ariticleData.author}"
+                    android:textSize="@dimen/item_ariticle_author_size"
+                    tools:text="作者是谁" />
+
+                <TextView
+                    android:id="@+id/tv_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/item_ariticle_tag_margin_start"
+                    android:background="@drawable/shape_title_lable"
+                    android:paddingStart="@dimen/item_ariticle_tag_padding_start_end"
+                    android:paddingTop="@dimen/item_ariticle_tag_padding_top_bottom"
+                    android:paddingEnd="@dimen/item_ariticle_tag_padding_start_end"
+                    android:paddingBottom="@dimen/item_ariticle_tag_padding_top_bottom"
+                    android:text="@string/text_istop"
+                    android:textColor="?attr/colorTag"
+                    android:textSize="@dimen/item_ariticle_tag_size"
+                    app:visibleOrGone="@{ariticleData.top}" />
+
+                <TextView
+                    android:id="@+id/tv_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/item_ariticle_tag_margin_start"
+                    android:background="@drawable/shape_title_lable"
+                    android:paddingStart="@dimen/item_ariticle_tag_padding_start_end"
+                    android:paddingTop="@dimen/item_ariticle_tag_padding_top_bottom"
+                    android:paddingEnd="@dimen/item_ariticle_tag_padding_start_end"
+                    android:paddingBottom="@dimen/item_ariticle_tag_padding_top_bottom"
+                    android:text="@string/text_new"
+                    android:textColor="?attr/colorTag"
+                    android:textSize="@dimen/item_ariticle_tag_size"
+                    app:visibleOrGone="@{ariticleData.fresh}" />
+
+                <TextView
+                    android:id="@+id/tv_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/item_ariticle_tag_margin_start"
+                    android:background="@drawable/shape_title_lable"
+                    android:paddingStart="@dimen/item_ariticle_tag_padding_start_end"
+                    android:paddingTop="@dimen/item_ariticle_tag_padding_top_bottom"
+                    android:paddingEnd="@dimen/item_ariticle_tag_padding_start_end"
+                    android:paddingBottom="@dimen/item_ariticle_tag_padding_top_bottom"
+                    android:text="@{ariticleData.tag}"
+                    android:textColor="?attr/colorTag"
+                    android:textSize="@dimen/item_ariticle_tag_size"
+                    app:visibleOrGone="@{ariticleData.hasTag}"
+                    tools:text="问答" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{ariticleData.date}"
+                android:textSize="@dimen/item_ariticle_date_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2021-01-25" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_ariticle_content_margintop">
+
+            <ImageView
+                android:id="@+id/iv_project"
+                android:layout_width="@dimen/item_project_image_width"
+                android:layout_height="@dimen/item_project_image_width"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{ariticleData.imgUlr}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/item_project_content_margin_start"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_project"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@{ariticleData.title}"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="@dimen/item_project_title_size"
+                    tools:text="这里是标题" />
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_project_content_margin_top"
+                    android:ellipsize="end"
+                    android:lineSpacingMultiplier="1.3"
+                    android:maxLines="5"
+                    android:text="@{ariticleData.content}"
+                    android:textSize="@dimen/item_project_content_size"
+                    tools:text="这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_ariticle_content_margintop">
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{ariticleData.type}"
+                android:textSize="@dimen/item_ariticle_type_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="分类·项目" />
+
+            <ImageButton
+                android:id="@+id/btn_collect"
+                android:layout_width="@dimen/item_ariticle_collect_width"
+                android:layout_height="@dimen/item_ariticle_collect_width"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitXY"
+                android:src="@{ariticleData.collected ? @drawable/icon_collected : @drawable/icon_collect}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="?attr/colorCollectButton"
+                tools:src="@drawable/icon_collected" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

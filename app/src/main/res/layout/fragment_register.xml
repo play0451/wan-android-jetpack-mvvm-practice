@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gw.mvvm.wan.viewModel.login.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.register.RegisterFragment">
+
+        <include
+            android:id="@+id/include_toolbar"
+            layout="@layout/include_toolbar" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_icon_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/login_icon_margin_top_bottom"
+            android:layout_marginBottom="@dimen/login_icon_margin_top_bottom"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/login_text_input_margin_start_end"
+                android:layout_marginEnd="@dimen/login_text_input_margin_start_end"
+                android:hint="@string/hint_user_name"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                app:hintTextColor="?attr/colorOnBackground">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:text="@={viewModel.userName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/login_text_input_margin_start_end"
+                android:layout_marginEnd="@dimen/login_text_input_margin_start_end"
+                android:hint="@string/hint_password"
+                app:counterEnabled="true"
+                app:counterMaxLength="16"
+                app:hintTextColor="?attr/colorOnBackground"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etv_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.password}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/login_text_input_margin_start_end"
+                android:layout_marginEnd="@dimen/login_text_input_margin_start_end"
+                android:hint="@string/hint_confirm_password"
+                app:counterEnabled="true"
+                app:counterMaxLength="16"
+                app:hintTextColor="?attr/colorOnBackground"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etv_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.confirmPassword}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/login_text_input_margin_start_end"
+                android:layout_marginTop="@dimen/login_button_margin_top"
+                android:layout_marginEnd="@dimen/login_text_input_margin_start_end"
+                android:text="@string/button_register" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

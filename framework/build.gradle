@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true//开启混淆
+            shrinkResources false//去除无用资源,对于libraries不能使用
+            zipAlignEnabled true//资源对齐
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation rootProject.ext.dependencies.core_ktx
+    implementation rootProject.ext.dependencies.appcompat
+
+    //lifecycle
+    implementation rootProject.ext.dependencies.lifecycle_runtime_ktx
+    implementation rootProject.ext.dependencies.lifecycle_common_java8
+    implementation rootProject.ext.dependencies.lifecycle_extensions
+    implementation rootProject.ext.dependencies.lifecycle_viewmodel_ktx
+    implementation rootProject.ext.dependencies.lifecycle_livedata_ktx
+    implementation rootProject.ext.dependencies.activity_ktx
+    implementation rootProject.ext.dependencies.fragment_ktx
+    implementation rootProject.ext.dependencies.unpeek_livedata  //防LiveData数据倒灌
+
+    //retrofit
+    implementation rootProject.ext.dependencies.retrofit
+    implementation rootProject.ext.dependencies.converter_gson
+
+    //navigation
+    implementation rootProject.ext.dependencies.navigation_fragment_ktx
+
+    testImplementation rootProject.test.junit
+    androidTestImplementation rootProject.test.test_junit
+    androidTestImplementation rootProject.test.espresso_core
+}

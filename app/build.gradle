@@ -1,0 +1,238 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.gw.mvvm.wan"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true//开启混淆
+            shrinkResources true//去除无用资源
+            zipAlignEnabled true//资源对齐
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+        disable "ResourceType"
+        abortOnError false
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        jumboMode = true
+        preDexLibraries = false
+        additionalParameters = [
+                '--multi-dex',//多分包
+                '--set-max-idx-number=60000'//每个包内方法数上限
+        ]
+    }
+
+    productFlavors {
+        output {
+            dimension = 'app'
+        }
+    }
+    flavorDimensions 'app'
+
+    //定义一个装apk文件路径的数组
+    def fileArray = []
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.contains('release')) {
+                //获取每个打包产物
+                def variantProd = variant.productFlavors[0]
+                def fileName = "Wamvvmp_${variantProd.name}_${defaultConfig.versionName}_${defaultConfig.versionCode}_${releaseTime()}.apk"
+                println "自定义输出apk的名字:" + fileName
+                outputFileName = fileName
+                println "输出apk地址:" + outputFile.parentFile.absolutePath + File.separator + fileName
+                fileArray.add(outputFile.parentFile.absolutePath + File.separator + fileName)
+            }
+        }
+    }
+
+    build {
+        doLast() {
+            println "任务1编译打包完成后需要复制apk的数量:" + fileArray.size()
+            forEachFile(fileArray)
+        }
+    }
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("GMT+08:00"))
+}
+
+def forEachFile(fileArray) {
+    fileArray.forEach { file ->
+        //遍历进行文件操作
+        println "任务3遍历apk文件"
+        rename_and_moveout_apk(file)
+    }
+}
+
+def rename_and_moveout_apk(orignalFile) {
+    def intoFile = rootDir.parentFile.getAbsolutePath() + File.separator + "apk"
+    copy {
+        from orignalFile
+        into intoFile
+        println "任务4复制apk到指定位置:" + intoFile
+        //rename("${android.defaultConfig.versionName}_${android.defaultConfig.versionCode}_", "")
+        //println "任务5修改apk的命名"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies.multidex
+    //基础框架
+    implementation project(path: ':framework')
+
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation rootProject.ext.dependencies.core_ktx
+    implementation rootProject.ext.dependencies.kotlinx_coroutines_android
+    implementation rootProject.ext.dependencies.appcompat
+
+    //https://github.com/material-components/material-components-android
+    implementation rootProject.ext.dependencies.material_components_android
+
+    implementation rootProject.ext.dependencies.constraintlayout
+    implementation rootProject.ext.dependencies.preference_ktx
+
+    //CardView
+    implementation rootProject.ext.dependencies.cardview
+    //弹性布局
+    implementation rootProject.ext.dependencies.flexbox
+
+    //导航
+    implementation rootProject.ext.dependencies.navigation_fragment_ktx
+    implementation rootProject.ext.dependencies.navigation_ui_ktx
+
+    //lifecycle
+    implementation rootProject.ext.dependencies.lifecycle_runtime_ktx
+    implementation rootProject.ext.dependencies.lifecycle_common_java8
+    implementation rootProject.ext.dependencies.lifecycle_extensions
+    implementation rootProject.ext.dependencies.lifecycle_viewmodel_ktx
+    implementation rootProject.ext.dependencies.lifecycle_livedata_ktx
+    implementation rootProject.ext.dependencies.activity_ktx
+    implementation rootProject.ext.dependencies.fragment_ktx
+    //防LiveData数据倒灌,https://github.com/KunMinX/UnPeek-LiveData
+    implementation rootProject.ext.dependencies.unpeek_livedata
+
+    //Room
+    implementation rootProject.ext.dependencies.room_runtime
+    kapt rootProject.ext.dependencies.room_compiler
+    // Room的Kotlin扩展及协程支持
+    implementation rootProject.ext.dependencies.room_ktx
+
+    //retrofit
+    implementation rootProject.ext.dependencies.retrofit
+    implementation rootProject.ext.dependencies.converter_gson
+    //PersistentCookieJar,https://github.com/franmontiel/PersistentCookieJar
+    implementation rootProject.ext.dependencies.PersistentCookieJar
+
+    //屏幕适配,https://github.com/JessYanCoding/AndroidAutoSize
+    implementation rootProject.ext.dependencies.autosize
+
+    //SmartRefreshLayout,https://github.com/scwang90/SmartRefreshLayout
+    implementation rootProject.ext.dependencies.smart_refresh_layout_kernel
+    implementation rootProject.ext.dependencies.smart_refresh_header_classics
+    implementation rootProject.ext.dependencies.smart_refresh_header_material
+    implementation rootProject.ext.dependencies.smart_refresh_footer_classics
+
+    //Banner,https://github.com/youth5201314/banner
+    implementation rootProject.ext.dependencies.banner
+
+    //BaseRecyclerViewAdapterHelper,https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    implementation rootProject.ext.dependencies.Base_recycler_view_adapter_helper
+
+    //LoadSir,https://github.com/KingJA/LoadSir
+    implementation rootProject.ext.dependencies.loadsir
+
+    //MagicIndicator,https://github.com/hackware1993/MagicIndicator
+    implementation rootProject.ext.dependencies.magic_indicator
+
+    //AgentWeb,https://github.com/Justson/AgentWeb
+    implementation rootProject.ext.dependencies.agentweb_androidx
+
+    //CustomActivityOnCrash,https://github.com/Ereza/CustomActivityOnCrash
+    implementation rootProject.ext.dependencies.custom_activity_on_crash
+
+    //Coil图片加载,https://github.com/coil-kt/coil
+    implementation rootProject.ext.dependencies.coil
+
+    //Material Dialogs,https://github.com/afollestad/material-dialogs
+    implementation rootProject.ext.dependencies.material_dialogs_core
+    implementation rootProject.ext.dependencies.material_dialogs_input
+    implementation rootProject.ext.dependencies.material_dialogs_files
+    implementation rootProject.ext.dependencies.material_dialogs_color
+    implementation rootProject.ext.dependencies.material_dialogs_datetime
+    implementation rootProject.ext.dependencies.material_dialogs_bottomsheets
+    implementation rootProject.ext.dependencies.material_dialogs_lifecycle
+
+    //Splitties Kotlin扩展库,https://github.com/LouisCAD/Splitties
+    implementation rootProject.ext.dependencies.splitties_toast
+    implementation rootProject.ext.dependencies.splitties_material_colors
+    implementation rootProject.ext.dependencies.splitties_resources
+    implementation rootProject.ext.dependencies.splitties_views_coroutines
+
+    //Timber日志,https://github.com/JakeWharton/timber
+    implementation rootProject.ext.dependencies.timber
+
+    //AndroidUtilCode工具类集合,https://github.com/Blankj/AndroidUtilCode
+    implementation rootProject.ext.dependencies.utilcodex
+
+    //MMKV,https://github.com/Tencent/MMKV
+    implementation rootProject.ext.dependencies.mmkv
+    implementation rootProject.ext.dependencies.legacy_support_v4
+
+    //矢量动画系统Lottie,https://github.com/airbnb/lottie-android
+    implementation rootProject.ext.dependencies.lottie
+
+    testImplementation rootProject.test.junit
+    androidTestImplementation rootProject.test.test_junit
+    androidTestImplementation rootProject.test.espresso_core
+    debugImplementation rootProject.test.leakcanary_android
+    androidTestImplementation rootProject.test.navigation_testing
+    testImplementation rootProject.test.room_testing
+
+    //在设备上查看UI层次结构的库,https://github.com/YvesCheung/UInspector
+    //debugImplementation 'com.huya.mobile:Uinspector:1.0.11'
+}

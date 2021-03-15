@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorTag" type="color" />
+    <attr name="colorNavButtonSelected" type="color" />
+    <attr name="colorNavButtonUnselected" type="color" />
+    <attr name="colorItemDecoration" type="color" />
+    <attr name="colorTodoItemDoneForeground" type="color" />
+    <attr name="colorDialogButton" type="color" />
+    <attr name="colorCoinText" type="color" />
+    <attr name="colorCollectButton" type="color" />
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="coinInfo"
+            type="com.gw.mvvm.wan.data.model.UserCoinInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.usercoin.UserCoinFragment">
+
+        <include
+            android:id="@+id/include_toolbar"
+            layout="@layout/include_toolbar" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="4dp"
+            app:visibleOrGone="@{coinInfo!=null}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_coin_my_rank" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(coinInfo.rank)}"
+                    android:textColor="?attr/colorCoinText"
+                    android:textStyle="bold"
+                    tools:text="1001" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/user_coin_my_coin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(coinInfo.coinCount)}"
+                    android:textColor="?attr/colorCoinText"
+                    android:textStyle="bold"
+                    tools:text="2020" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <include
+            android:id="@+id/include_refresh_list"
+            layout="@layout/include_refresh_list" />
+    </LinearLayout>
+</layout>
